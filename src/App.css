@@ -1,4 +1,4 @@
-/* Genel stil ayarları */
+
 body {
   font-family: 'Arial', sans-serif;
   background: #f7f7f7;
@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-/* Başlık kısmı için stil */
+
 .AppHeader {
   background-color: #333;
   color: white;
@@ -19,12 +19,12 @@ h1 {
   margin: 0;
 }
 
-/* Ürün listesi ve sepet bölümleri için genel konteyner stil */
+
 div {
   box-sizing: border-box;
 }
 
-/* Ürün listesi stil */
+
 .UrunListesi {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -68,7 +68,7 @@ div {
   background-color: #4cae4c;
 }
 
-/* Sepet stil */
+
 .Sepet {
   position: fixed;
   right: 0;
@@ -86,7 +86,6 @@ div {
   margin-top: 0;
 }
 
-/* Ekranın küçük olduğu durumlarda sepeti gizle */
 @media (max-width: 600px) {
   .Sepet {
     display: none;
@@ -96,9 +95,9 @@ div {
 .urunlerContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Ürün kartları arasında boşluk */
-  justify-content: center; /* Merkeze hizalama */
-  padding: 20px; /* Konteyner padding'i */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px; 
 }
 
 .Urun {
@@ -107,18 +106,18 @@ div {
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 250px; /* Kart genişliği */
-  margin: 0 auto; /* Merkezleme */
+  width: 250px; 
+  margin: 0 auto; 
   padding: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* İçerikleri kartın üst ve altına yay */
+  justify-content: space-between;
 }
 
 .Urun img {
-  width: 100%; /* Resmin genişliği */
-  height: auto; /* Resmin yüksekliği otomatik */
+  width: 100%;
+  height: auto;
   margin-bottom: 8px;
 }
 

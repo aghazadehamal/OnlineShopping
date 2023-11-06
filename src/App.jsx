@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import UrunListesi from './components/UrunListesi';
 import Sepet from './components/Sepet';
 import './App.css';
-// Sepet ikonu için kullanılan kütüphaneyi ekleyin, örneğin react-icons
+
 import { FaShoppingCart } from 'react-icons/fa';
 
 const App = () => {
   const [urunler, setUrunler] = useState([]);
   const [sepet, setSepet] = useState([]);
-  const [sepetGoster, setSepetGoster] = useState(false); // Yeni durum değişkeni
+  const [sepetGoster, setSepetGoster] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -28,7 +28,7 @@ const App = () => {
     });
   };
 
-  // Sepet ikonunun tıklama işleyicisi
+
   const toggleSepet = () => {
     setSepetGoster(!sepetGoster);
   };
@@ -37,10 +37,10 @@ const App = () => {
     <div>
       <header className="AppHeader">
         <h1>Online Ticarət Səhifəsi</h1>
-        {/* Sepet ikonunu ekleme */}
+        
         <FaShoppingCart onClick={toggleSepet} style={{ cursor: 'pointer' }} />
       </header>
-      {sepetGoster && <Sepet sepet={sepet} />} {/* Şartlı render ile sepetin görünürlüğünü kontrol et */}
+      {sepetGoster && <Sepet sepet={sepet} />} 
       <UrunListesi urunler={urunler} sepeteEkle={sepeteEkle} />
     </div>
   );

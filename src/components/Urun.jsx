@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Urun = ({ urun, sepeteEkle }) => {
-  // Use the 'urun.imageUrl' if it exists, otherwise fallback to a default
+
   const imageUrl = urun.image || "";
 
   return (
