@@ -1,0 +1,80 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+h2 {
+  color: #333;
+}
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+.Urun {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Sepet {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.Sepet h2 {
+  margin-top: 0;
+}
+
+.SepetItem {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+
+
+.AppHeader {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+}
+
+
+.urunlerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+ 
+}
+
+
+
+
+
+
