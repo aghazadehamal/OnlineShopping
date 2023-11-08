@@ -8,7 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 const App = () => {
   const [urunler, setUrunler] = useState([]);
   const [sepet, setSepet] = useState([]);
-  const [sepetGoster, setSepetGoster] = useState(false);
+  const [sebetgoster, setSebetgoster] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -30,17 +30,17 @@ const App = () => {
 
 
   const toggleSepet = () => {
-    setSepetGoster(!sepetGoster);
+    setSebetgoster(!sebetgoster);
   };
 
   return (
     <div>
       <header className="AppHeader">
-        <h1>Online Ticarət Səhifəsi</h1>
+        <h1>Online Ticarət Səhifəsi          <i style={{fontSize: "25px", marginLeft: "30px"}}><FaShoppingCart onClick={toggleSepet} style={{ cursor: 'pointer' }} /></i></h1>
         
-        <FaShoppingCart onClick={toggleSepet} style={{ cursor: 'pointer' }} />
+        
       </header>
-      {sepetGoster && <Sepet sepet={sepet} />} 
+      {sebetgoster && <Sepet sepet={sepet} />} 
       <UrunListesi urunler={urunler} sepeteEkle={sepeteEkle} />
     </div>
   );
