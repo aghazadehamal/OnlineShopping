@@ -1,34 +1,34 @@
-import React from 'react';
+import React from "react";
 
 function getNumericPrice(priceString) {
-  if (typeof priceString !== 'string') {
-    console.error('Price must be a string', priceString);
+  if (typeof priceString !== "string") {
+    console.error("Price must be a string", priceString);
     return 0;
   }
-  return parseFloat(priceString.replace(/[^\d.-]/g, ''));
+  return parseFloat(priceString.replace(/[^\d.-]/g, ""));
 }
 
 function calculateTotalPrice(sebet) {
-  // Ensure that `sebet` is always an array to avoid errors with `reduce`
   if (!Array.isArray(sebet)) {
-    console.error('The cart items should be an array', sebet);
-    return 0; // Return 0 or handle as appropriate for your application
+    console.error("The cart items should be an array", sebet);
+    return 0;
   }
 
   return sebet.reduce((total, item) => {
-    const numericPrice = typeof item.price === 'number' ? item.price : getNumericPrice(item.price);
+    const numericPrice =
+      typeof item.price === "number" ? item.price : getNumericPrice(item.price);
     const quantity = parseInt(item.miqdar, 10);
-    
+
     if (isNaN(numericPrice) || isNaN(quantity)) {
-      console.error('Item price or quantity is not a valid number', item);
+      console.error("Item price or quantity is not a valid number", item);
       return total;
     }
 
-    return total + (numericPrice * quantity);
+    return total + numericPrice * quantity;
   }, 0);
 }
 
-const Sebet = ({ sebetItems = [] }) => { // Set a default value for `sebetItems`
+const Sebet = ({ sebetItems = [] }) => {
   const totalPrice = calculateTotalPrice(sebetItems);
 
   return (
@@ -36,11 +36,13 @@ const Sebet = ({ sebetItems = [] }) => { // Set a default value for `sebetItems`
       <h2>Səbət</h2>
       {sebetItems.map((item) => (
         <div key={item.id} className="sebetItem">
-          <span>{item.name} x {item.miqdar}</span>
+          <span>
+            {item.name} x {item.miqdar}
+          </span>
           <span> Qiymət: {item.price}</span>
         </div>
       ))}
-   
+
       <div className="sebetTotal">
         <strong>Toplam Qiymət:</strong> {totalPrice.toFixed(2)} Azn
       </div>

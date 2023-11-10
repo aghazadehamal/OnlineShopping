@@ -1,9 +1,9 @@
-import React from 'react';
-import Mehsul from './Mehsul';
+import React from "react";
+import Mehsul from "./Mehsul";
 
 const MehsulListi = ({ mehsullar, sebeteElaveEt }) => {
   return (
-    <div className="mehsullarContainer"> 
+    <div className="mehsullarContainer">
       {mehsullar.map((mehsul) => (
         <Mehsul key={mehsul.id} mehsul={mehsul} sebeteElaveEt={sebeteElaveEt} />
       ))}

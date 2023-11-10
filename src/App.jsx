@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import MehsulListi from './components/MehsulListi';
-import Sebet from './components/Sebet';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import MehsulListi from "./components/MehsulListi";
+import Sebet from "./components/Sebet";
+import "./App.css";
 
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart } from "react-icons/fa";
 
 const App = () => {
   const [mehsullar, setMehsullar] = useState([]);
@@ -11,20 +11,20 @@ const App = () => {
   const [sebetGoster, setSebetGoster] = useState(false);
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
-      .then(res => res.json())
-      .then(json => {
-        const ilk55Mehsul = json.slice(0, 50); 
+    fetch("https://api.escuelajs.co/api/v1/products")
+      .then((res) => res.json())
+      .then((json) => {
+        const ilk55Mehsul = json.slice(0, 50);
         setMehsullar(ilk55Mehsul);
       });
   }, []);
 
-  const sebeteElaveEt = mehsul => {
-    console.log('Ürün sebete ekleniyor:', mehsul);
-    setSebet(currentSebet => {
-      const mehsulBulundu = currentSebet.find(item => item.id === mehsul.id);
+  const sebeteElaveEt = (mehsul) => {
+    console.log("Ürün sebete ekleniyor:", mehsul);
+    setSebet((currentSebet) => {
+      const mehsulBulundu = currentSebet.find((item) => item.id === mehsul.id);
       if (mehsulBulundu) {
-        return currentSebet.map(item =>
+        return currentSebet.map((item) =>
           item.id === mehsul.id ? { ...item, miqdar: item.miqdar + 1 } : item
         );
       }
@@ -39,11 +39,17 @@ const App = () => {
   return (
     <div>
       <header className="AppHeader">
-        <h1>Online Ticarət Səhifəsi <i style={{ fontSize: "25px", marginLeft: "30px" }}>
-          <FaShoppingCart onClick={toggleSebet} style={{ cursor: 'pointer' }} />
-        </i></h1> 
+        <h1>
+          Online Ticarət Səhifəsi{" "}
+          <i style={{ fontSize: "25px", marginLeft: "30px" }}>
+            <FaShoppingCart
+              onClick={toggleSebet}
+              style={{ cursor: "pointer" }}
+            />
+          </i>
+        </h1>
       </header>
-     
+
       {sebetGoster && <Sebet sebetItems={sebet} />}
 
       <MehsulListi mehsullar={mehsullar} sebeteElaveEt={sebeteElaveEt} />
