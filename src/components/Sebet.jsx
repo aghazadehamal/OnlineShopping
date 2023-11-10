@@ -8,14 +8,16 @@ function getNumericPrice(priceString) {
   return parseFloat(priceString.replace(/[^\d.-]/g, ''));
 }
 
+function calculateTotalPrice(sebet) {
+  // Ensure that `sebet` is always an array to avoid errors with `reduce`
+  if (!Array.isArray(sebet)) {
+    console.error('The cart items should be an array', sebet);
+    return 0; // Return 0 or handle as appropriate for your application
+  }
 
-
-
-function calculateTotalPrice(sepet) {
-  return sepet.reduce((total, item) => {
-
+  return sebet.reduce((total, item) => {
     const numericPrice = typeof item.price === 'number' ? item.price : getNumericPrice(item.price);
-    const quantity = parseInt(item.miktar, 10); 
+    const quantity = parseInt(item.miqdar, 10);
     
     if (isNaN(numericPrice) || isNaN(quantity)) {
       console.error('Item price or quantity is not a valid number', item);
@@ -26,31 +28,24 @@ function calculateTotalPrice(sepet) {
   }, 0);
 }
 
-
-
-
-
-
-
-const Sepet = ({ sepet }) => {
-
-  const totalPrice = calculateTotalPrice(sepet);
+const Sebet = ({ sebetItems = [] }) => { // Set a default value for `sebetItems`
+  const totalPrice = calculateTotalPrice(sebetItems);
 
   return (
-    <div className="Sepet">
-      <h2>Səbət </h2>
-      {sepet.map((item) => (
-        <div key={item.id} className="SepetItem">
-          <span>{item.name} x {item.miktar}</span>
+    <div className="sebet">
+      <h2>Səbət</h2>
+      {sebetItems.map((item) => (
+        <div key={item.id} className="sebetItem">
+          <span>{item.name} x {item.miqdar}</span>
           <span> Qiymət: {item.price}</span>
         </div>
       ))}
    
-      <div className="SepetTotal">
+      <div className="sebetTotal">
         <strong>Toplam Qiymət:</strong> {totalPrice.toFixed(2)} Azn
       </div>
     </div>
   );
 };
 
-export default Sepet;
+export default Sebet;

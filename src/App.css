@@ -25,37 +25,37 @@ div {
 }
 
 
-.UrunListesi {
+.mehsulListi {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
 
-.Urun {
+.mehsul {
   border: 1px solid #ddd;
   padding: 1rem;
   background: #fff;
   border-radius: 4px;
 }
 
-.Urun img {
+.mehsul img {
   max-width: 100%;
   height: auto;
   display: block;
   margin-bottom: 1rem;
 }
 
-.Urun h3 {
+.mehsul h3 {
   margin: 0 0 1rem 0;
 }
 
-.Urun p {
+.mehsul p {
   font-size: .9rem;
   color: #666;
 }
 
-.Urun button {
+.mehsul button {
   background-color: #5cb85c;
   color: white;
   padding: 10px;
@@ -64,12 +64,12 @@ div {
   cursor: pointer;
 }
 
-.Urun button:hover {
+.mehsul button:hover {
   background-color: #4cae4c;
 }
 
 
-.Sepet {
+.sebet {
   position: fixed;
   right: 0;
   top: 0;
@@ -82,17 +82,17 @@ div {
   box-shadow: -2px 0 5px rgba(0,0,0,0.1);
 }
 
-.Sepet h2 {
+.sebet h2 {
   margin-top: 0;
 }
 
 @media (max-width: 600px) {
-  .Sepet {
+  .sebet {
     display: none;
   }
 }
 
-.urunlerContainer {
+.mehsullarContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -100,7 +100,7 @@ div {
   padding: 20px; 
 }
 
-.Urun {
+.mehsul {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -115,24 +115,24 @@ div {
   justify-content: space-between;
 }
 
-.Urun img {
+.mehsul img {
   width: 100%;
   height: auto;
   margin-bottom: 8px;
 }
 
-.Urun h3 {
+.mehsul h3 {
   font-size: 1.2rem;
   color: #333;
 }
 
-.Urun p {
+.mehsul p {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 16px;
 }
 
-.Urun button {
+.mehsul button {
   background-color: #5cb85c;
   color: white;
   border: none;
@@ -142,13 +142,13 @@ div {
   transition: background-color 0.3s ease;
 }
 
-.Urun button:hover {
+.mehsul button:hover {
   background-color: #4cae4c;
 }
 
 
 /* @media (max-width: 768px) {
-  .urunlerContainer {
+  .mehsullerContainer {
     flex-direction: column;
     align-items: center;
   }
